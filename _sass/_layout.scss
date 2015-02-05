@@ -1,27 +1,117 @@
+@charset "UTF-8";
 /**
  * Site header
  */
-.site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+body {
+    font-family:helvetica, arial, sans-serif; 
+    background:#efefef; margin:0 0;
+}
+#wrapper {
+  width:980px; 
+  margin:0 auto 20px;
+}
+header {
+    // border-top: 5px solid $grey-color-dark;
+    // border-bottom: 1px solid $grey-color-light;
+    // // min-height: 56px;
+    // height: 200px;
 
-    // Positioning context for the mobile navigation icon
+    // // Positioning context for the mobile navigation icon
+    // position: relative;
     position: relative;
+    height: 70px;
+    margin: 10px 0;
+    background: #fff;
+    border-radius:20px 0px 20px 0px;
+    box-shadow:0 12px 8px -9px #555;
+    padding:1px;
 }
-
-.site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
+header section#title {
+    position:absolute;
+    width:350px; /* wide enough to not force text wrap */
+    height:65px; /* tall enough for both lines of text */
+    left:0px; /* top left corner positioning */
+    top:10px;
 }
+header h1 {
+    padding:9px 12px 0;
+    font-family:Lato, helvetica, sans-serif;
+    font-style:normal;
+    font-weight:900;
+    font-size:2.2em;
+    line-height:1;
+    letter-spacing:-.025em;
+    color:#4eb8ea;
+}
+// header h2 {
+//     font-family:"Source Sans Pro", helvetica, sans-serif;
+//     font-style:normal;
+//     font-weight:400;
+//     font-size:.9em;
+//     color:#333;
+//     padding:0px 12px;
+//     line-height:1;
+//     letter-spacing:-.025em;
+// }
+/*menu*/ 
+nav.menu {
+    margin:19px auto;
+    padding:0;
+    text-align:center; /*在容器内居中菜单*/
+    font-size:.8em;
+}
+nav.menu > ul { display:inline-block;} /*收缩包紧列表项*/
+nav.menu li {
+    float:left; /* 让菜单项水平排列*/
+    list-style-type:none; /*去掉默认的项目符号*/
+    position:relative; /*为子列表提供定位上下文*/
+}
+nav.menu li a {
+    display:block; /*让链接填满列表项*/
+    padding:.25em .8em;
+    font-family:"Source Sans Pro", helvetica, sans-serif;
+    font-style: normal;
+    font-weight:600;
+    font-size:1.2em;
+    text-align:left;
+    color:#fff;
+    text-decoration:none; /*去掉链接的下划线*/
+    -webkit-font-smoothing: antialiased; /*在 WebKit 浏览器中平滑字体*/
+}
+nav.menu li.home a {background:#f58c21;}
+nav.menu li.work a {background:#4eb8ea;}
+nav.menu li.blog a {background:#d6e636;}
+nav.menu li.about a {background:#ee4c98;}
+nav.menu li.contact a {background:#f58c21;}
+nav.menu li:hover > a {
+    color:#555;
+    border-color:#fff;
+    border:0;
+}
+nav.menu li:last-child a {border-bottom-right-radius:10px;}
+nav.menu li:first-child a {border-top-left-radius:10px;}
+/*search*/
+form.search {
+    position:absolute; 
+    width:150px; /*宽到足以容纳扩展后的搜索框*/
+    top:23px; 
+    right:20px; /*相对于页眉右上角定位*/
+}
+.search input {
+    float:right; width:70px;
+    padding:2px 0 3px 5px;
+    border-radius:10px 0px 10px 0px;
+    font-family:"Source Sans Pro", helvetica, sans-serif;
+    font-weight: 400;
+    font-size:1em;
+    color:#888;
+    outline:none; /*去掉默认的轮廓线*/
+    -webkit-transition:2s width; /*搜索框过渡动画,别忘了带其他厂商前缀的属性*/
+}
+.search input:focus { width:140px;}/*在获得焦点时扩展到这么宽*/
+.search label{display:none;}
+form.search input {background-color:#fff;}
+form.search input::-webkit-input-placeholder {color:#ccc;}
 
 .site-nav {
     float: right;
